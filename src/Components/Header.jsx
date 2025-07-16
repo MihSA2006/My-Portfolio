@@ -12,7 +12,6 @@ const Header = () => {
     { label: 'Acceuil', href: '#me', sectionId: 'me' },
     { label: 'Mes Projets', href: '#project', sectionId: 'project' },
     { label: 'Mes Competences', href: '#skills', sectionId: 'skills' },
-    { label: 'Contactez moi', href: '#contactMe', sectionId: 'contactMe' },
   ];
 
   // Synchroniser le lien actif avec le scroll

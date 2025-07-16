@@ -6,6 +6,7 @@ import Header from '../Components/Header'
 import MySkills from '../Components/MySkills'
 import ContactMe from '../Components/ContactMe'
 import Footer from '../Components/Footer'
+import FadeInSection from '../Components/FadeInSection'
 
 
 const Portfolio = () => {
@@ -64,17 +65,27 @@ const Portfolio = () => {
       </div>
 
 
-      <Me />
-      <MyProject />
+      <FadeInSection>
+        <Me />
+      </FadeInSection>
 
+      <FadeInSection delay={0.2}>
+        <MyProject />
+      </FadeInSection>
 
-      <div ref={mySkillsRef}>
-        <MySkills />
-      </div>
+      <FadeInSection delay={0.4}>
+        <div ref={mySkillsRef}>
+          <MySkills />
+        </div>
+      </FadeInSection>
 
+      <FadeInSection delay={0.6}>
+        <ContactMe />
+      </FadeInSection>
 
-      <ContactMe />
-      <Footer />
+      <FadeInSection delay={0.8}>
+        <Footer />
+      </FadeInSection>
 
 
 
