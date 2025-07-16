@@ -6,9 +6,10 @@ const Header = () => {
     const [activeLink, setActiveLink] = useState('Acceuil');
     
       const links = [
-        { label: 'Acceuil', href: '#services' },
-        { label: 'Parcours', href: '#works' },
+        { label: 'Acceuil', href: '#me' },
         { label: 'Mes Projets', href: '#project' },
+        { label: 'Mes Competences', href: '#skills' },
+
         // { label: 'Me contacter', href: '#experience' },
       ];
     

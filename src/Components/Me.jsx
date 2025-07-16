@@ -6,7 +6,7 @@ import img from '../assets/img.png'
 
 const Me = () => {
   return (
-    <div className="min-h-screen w-full relative flex flex-col">
+    <div id="me" className="min-h-screen w-full relative flex flex-col">
       {/* Top half bg-neutral-50 */}
       <div className="w-full h-[30%] min-h-[40vh] bg-neutral-50"></div>
       {/* Bottom half white */}

@@ -4,7 +4,7 @@ export function Button({ children, className = "", variant = "", size = "md", ..
   let base = "inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ";
   let variants = {
     outline: "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50",
-    default: "bg-blue-600 text-white hover:bg-blue-700",
+    default: "bg-black text-white hover:bg-blue-700",
   };
   let sizes = {
     sm: "px-3 py-1 text-sm",

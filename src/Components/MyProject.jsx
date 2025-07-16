@@ -126,7 +126,7 @@ const MyProject = () => {
   const displayedProjects = activeTab === 'web' ? webProjects : mobileProjects;
 
   return (
-    <div className='mt-[135px] flex flex-col justify-center items-center w-full mb-[50px]'>
+    <div id='project' className='mt-[135px] flex flex-col justify-center items-center w-full mb-[50px]'>
       <h1 className='text-center font-bold text-4xl text-neutral-800 mt-8'>Mes Projets</h1>
 
       <div className="flex justify-center mt-8 mb-8">
