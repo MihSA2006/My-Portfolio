@@ -1,17 +1,14 @@
 import React from 'react'
 import { FaLaptop, FaMobileAlt } from 'react-icons/fa'
-import css from '../assets/css.png'
-import dotnet from '../assets/dotnet.png'
-import mysql from '../assets/MySQL.png'
 import recsound from '../assets/Rec Sound.PNG'
 import chatmih from '../assets/Chat Mih.PNG'
 import ifidy from '../assets/ifidy.PNG'
 import taskmaster from '../assets/TastMaster.PNG'
 import loginui from '../assets/LoginUI.jpg'
 import melodikey from '../assets/MelodiKey.jpg'
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "../Components/ui/badge"
+import { Button } from "../Components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../Components/ui/card"
 import { ExternalLink, Github, Monitor, Smartphone } from "lucide-react"
 
 const projects = [
