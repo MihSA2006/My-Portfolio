@@ -253,7 +253,7 @@ const MySkills = () => {
   const [activeTab, setActiveTab] = useState('all')
   
   return (
-    <section id="skills" className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-neutral-100">
+    <section id="skills" className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-neutral-100">
       <div className="max-w-6xl mx-auto">
         {/* En-tête avec animation */}
         <motion.div 
@@ -285,28 +285,6 @@ const MySkills = () => {
             transition={{ delay: 0.6, duration: 0.8, ease: "backOut" }}
           />
         </motion.div>
-
-        {/* Filtres */}
-        {/* <motion.div 
-          className="flex flex-wrap justify-center gap-3 mb-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-        >
-          {['all', ...Object.keys(skillCategories)].map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveTab(category)}
-              className={`px-4 py-2 rounded-full font-medium text-sm transition-all ${
-                activeTab === category 
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
-              }`}
-            >
-              {category === 'all' ? 'Toutes' : category}
-            </button>
-          ))}
-        </motion.div> */}
 
         {/* Catégories de compétences */}
         <div className="space-y-6">

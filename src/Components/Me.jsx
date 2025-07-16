@@ -47,10 +47,11 @@ const Me = () => {
               <span className="flex items-center justify-center mb-2 rounded-full bg-neutral-50 border border-neutral-200 w-10 h-10">
                 <AiOutlineWhatsApp className="text-grey text-2xl"/>
               </span>
-
-              <span className="flex items-center justify-center mb-2 rounded-full bg-neutral-50 border border-neutral-200 w-10 h-10">
-                <FaFacebookF className="text-grey text-2xl" />
-              </span>
+              <a href="https://www.facebook.com/misandratraharena.rakotoarimanana">
+                <span className="flex items-center justify-center mb-2 rounded-full bg-neutral-50 border border-neutral-200 w-10 h-10">
+                  <FaFacebookF className="text-grey text-2xl" />
+                </span>
+              </a>
             </div>
 
             <div className="flex flex-col items-start ml-5">
@@ -61,7 +62,9 @@ const Me = () => {
                 <span className="text-neutral-400 text-sm">+261 34 62 144 84</span>
               </div>
               <div className="mb-5">
-                <span className="text-neutral-400 text-sm">Misandratra Harena Rakotoarimanana</span>
+                <a href="https://www.facebook.com/misandratraharena.rakotoarimanana">
+                  <span className="text-neutral-400 text-sm">Misandratra Harena Rakotoarimanana</span>
+                </a>
               </div>
             </div>
 
@@ -69,8 +72,8 @@ const Me = () => {
 
           {/* Read More Button */}
           <button className="group relative inline-flex items-center text-neutral-800 font-medium text-lg tracking-widest transition-all duration-300 hover:text-neutral-900">
-            <span className="relative z-10 text-blue-500 underline">Telecharger mon CV</span>
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-neutral-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            <span className="relative z-10 text-blue-500">Telecharger mon CV</span>
+            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
         </div>
       </div>

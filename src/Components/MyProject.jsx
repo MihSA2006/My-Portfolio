@@ -174,7 +174,7 @@ const MyProject = () => {
                     </div>
 
                     <CardHeader>
-                      <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-gray-600 transition-colors">
                         {project.title}
                       </CardTitle>
                       <CardDescription className="text-gray-600 text-xs line-clamp-2">{project.description}</CardDescription>
