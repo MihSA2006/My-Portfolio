@@ -4,12 +4,15 @@ import css from '../assets/css.png'
 import dotnet from '../assets/dotnet.png'
 import mysql from '../assets/MySQL.png'
 import recsound from '../assets/Rec Sound.PNG'
+import chatmih from '../assets/Chat Mih.PNG'
+import ifidy from '../assets/ifidy.PNG'
+import taskmaster from '../assets/TastMaster.PNG'
+import loginui from '../assets/LoginUI.jpg'
+import melodikey from '../assets/MelodiKey.jpg'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink, Github, Monitor, Smartphone } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
 
 const projects = [
   {
@@ -17,46 +20,73 @@ const projects = [
     title: "Rec Sound",
     description:
       "Plateforme de vente des materiels de musique : instruments, sonorisations, ... et des lumières, des projecteurs et etc...",
-    image: dotnet,
+    image: recsound,
     type: "web",
     technologies: ["Dotnet", "Html", "Css", "MySQL"],
-    githubUrl: "https://github.com/username/ecommerce-dashboard",
+    githubUrl: "https://github.com/MihSA2006/Rec-Sound",
     liveUrl: "https://ecommerce-dashboard-demo.vercel.app",
     status: "completed",
   },
   {
     id: 2,
-    title: "Task Manager Mobile",
+    title: "Chat Mih",
     description:
-      "Application mobile de gestion de tâches avec synchronisation cloud, notifications push et collaboration en équipe.",
-    image: "/placeholder.svg?height=300&width=400",
-    type: "mobile",
-    technologies: ["React Native", "TypeScript", "Expo", "Firebase", "AsyncStorage"],
-    githubUrl: "https://github.com/username/task-manager-mobile",
-    status: "completed",
+      "Plateforme de chatbot intelligent utilisant l'api de Groq. Ayant les models : texte, raisonnement, et vision",
+    image: chatmih,
+    type: "web",
+    technologies: ["ReactJs", "Express", "Scss"],
+    githubUrl: "https://github.com/MihSA2006/Chat-Mih",
+    liveUrl: "https://ecommerce-dashboard-demo.vercel.app",
+    status: "in-progress",
   },
   {
     id: 3,
-    title: "Portfolio Personnel",
-    description: "Site web portfolio responsive avec animations fluides, blog intégré et formulaire de contact.",
-    image: "/placeholder.svg?height=300&width=400",
+    title: "I-Fidy",
+    description:
+      "Une plateforme sécurisée de vote électronique destinée aux élections locales. Sécurité : Authentification à deux facteurs, Reconnaissance faciale, ... ",
+    image: ifidy,
     type: "web",
-    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "MDX"],
-    githubUrl: "https://github.com/username/portfolio",
-    liveUrl: "https://mon-portfolio.vercel.app",
-    status: "completed",
+    technologies: ["ReactJs", "Django", "Tailwind Css", "Postgresql"],
+    githubUrl: "https://github.com/rabearisonkhevin15/I-fidy-dash",
+    liveUrl: "https://ecommerce-dashboard-demo.vercel.app",
+    status: "in-progress",
   },
   {
     id: 4,
-    title: "Fitness Tracker",
+    title: "TaskMaster",
     description:
-      "Application mobile de suivi fitness avec tracking GPS, plans d'entraînement personnalisés et statistiques détaillées.",
-    image: "/placeholder.svg?height=300&width=400",
+      "Simple Todo App avec Java Swing",
+    image: taskmaster,
+    type: "web",
+    technologies: ["Java Swing"],
+    githubUrl: "https://github.com/MihSA2006/Task-Master",
+    liveUrl: "https://ecommerce-dashboard-demo.vercel.app",
+    status: "completed",
+  },
+   {
+    id: 5,
+    title: "Login UI",
+    description:
+      "Application Simple de  Connexion et Inscription avec authentification Mail",
+    image: loginui,
     type: "mobile",
-    technologies: ["React Native", "Expo", "SQLite", "Maps API", "HealthKit"],
-    githubUrl: "https://github.com/username/fitness-tracker",
+    technologies: ["Java","SQLite"],
+    githubUrl: "https://github.com/MihSA2006/Login-UI",
+    liveUrl: "https://ecommerce-dashboard-demo.vercel.app",
+    status: "completed",
+  },
+  {
+    id: 6,
+    title: "MelodiKey",
+    description:
+      "Application pour aider les musciens à organiser leur repertoire pour des évènements",
+    image: melodikey,
+    type: "mobile",
+    technologies: ["Java","SQLite"],
+    githubUrl: "https://github.com/Sarobidy2112/MelodiKey",
+    liveUrl: "https://ecommerce-dashboard-demo.vercel.app",
     status: "in-progress",
-  }
+  },
 ]
 
 const getStatusColor = (status) => {
@@ -86,70 +116,68 @@ const getStatusText = (status) => {
 }
 
 
-const MyProject = () => {
 
-  const webProjects = projects.filter((project) => project.type === "web")
-  const mobileProjects = projects.filter((project) => project.type === "mobile")
+import { useState } from 'react';
+
+const MyProject = () => {
+  const [activeTab, setActiveTab] = useState('web');
+  const webProjects = projects.filter((project) => project.type === "web");
+  const mobileProjects = projects.filter((project) => project.type === "mobile");
+  const displayedProjects = activeTab === 'web' ? webProjects : mobileProjects;
 
   return (
     <div className='mt-[135px] flex flex-col justify-center items-center w-full mb-[50px]'>
-        <h1 className='text-center font-bold text-4xl text-neutral-800 mt-8'>Mes Projets</h1>
+      <h1 className='text-center font-bold text-4xl text-neutral-800 mt-8'>Mes Projets</h1>
 
-        <div className="flex justify-center mt-8 mb-8">
-          <ul className="flex gap-8">
-            <li className="flex items-center gap-3 cursor-pointer mr-[80px]" >
-              <span className="bg-black text-white rounded-full p-3 shadow-md flex items-center justify-center">
-                <FaLaptop className="text-xl" />
-              </span>
-              <span className="font-bold text-black">Plateforme Web</span>
-            </li>
-            <li className="flex items-center gap-3 cursor-pointer">
-              <span className="bg-gray-300 text-white rounded-full p-3 shadow-md flex items-center justify-center">
-                <FaMobileAlt className="text-xl" />
-              </span>
-              <span className="font-medium text-gray-400">Application Mobile</span>
-            </li>
-          </ul>
-        </div>
+      <div className="flex justify-center mt-8 mb-8">
+        <ul className="flex gap-8">
+          <li
+            className={`flex items-center gap-3 cursor-pointer mr-[80px] transition-all duration-200 ${activeTab === 'web' ? 'scale-105' : ''}`}
+            onClick={() => setActiveTab('web')}
+          >
+            <span className={`rounded-full p-3 shadow-md flex items-center justify-center transition-all duration-200 ${activeTab === 'web' ? 'bg-black text-white' : 'bg-gray-300 text-gray-400'}`}>
+              <FaLaptop className="text-xl" />
+            </span>
+            <span className={`font-bold transition-all duration-200 ${activeTab === 'web' ? 'text-black' : 'text-gray-400'}`}>Plateforme Web</span>
+          </li>
+          <li
+            className={`flex items-center gap-3 cursor-pointer transition-all duration-200 ${activeTab === 'mobile' ? 'scale-105' : ''}`}
+            onClick={() => setActiveTab('mobile')}
+          >
+            <span className={`rounded-full p-3 shadow-md flex items-center justify-center transition-all duration-200 ${activeTab === 'mobile' ? 'bg-black text-white' : 'bg-gray-300 text-gray-400'}`}>
+              <FaMobileAlt className="text-xl" />
+            </span>
+            <span className={`font-bold transition-all duration-200 ${activeTab === 'mobile' ? 'text-black' : 'text-gray-400'}`}>Application Mobile</span>
+          </li>
+        </ul>
+      </div>
 
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Mon Portfolio</h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Découvrez mes projets web et mobile développés avec React.js, React Native et Tailwind CSS
-              </p>
-            </div>
-
-            {/* Web Section */}
-            <section className="mb-16">
-              <div className="flex items-center gap-3 mb-8">
-                <Monitor className="w-8 h-8 text-blue-600" />
-                <h2 className="text-3xl font-bold text-gray-900">Projets Web</h2>
-                <Badge variant="secondary" className="ml-2">{webProjects.length} projets</Badge>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {webProjects.map((project) => (
-                  <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+      {/* section project Content */}
+      <div className="flex justify-center w-full">
+        <div className="max-w-5xl w-full mx-auto">
+          <section className="mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center items-center">
+              {displayedProjects.map((project) => (
+                <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg w-[320px] h-[370px] flex flex-col justify-between">
+                  <div>
                     <div className="relative overflow-hidden rounded-t-lg">
-                      <Image
+                      <img
                         src={project.image}
                         alt={project.title}
-                        width={400}
-                        height={300}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        width="320"
+                        height="200"
+                        className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute top-4 right-4">
+                      <div className="absolute top-3 right-3">
                         <Badge className={getStatusColor(project.status)}>{getStatusText(project.status)}</Badge>
                       </div>
                     </div>
 
                     <CardHeader>
-                      <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                         {project.title}
                       </CardTitle>
-                      <CardDescription className="text-gray-600 line-clamp-3">{project.description}</CardDescription>
+                      <CardDescription className="text-gray-600 text-xs line-clamp-2">{project.description}</CardDescription>
                     </CardHeader>
 
                     <CardContent className="space-y-4">
@@ -158,97 +186,34 @@ const MyProject = () => {
                           <Badge key={tech} variant="outline" className="text-xs">{tech}</Badge>
                         ))}
                       </div>
-                      <div className="flex gap-2">
-                        {project.githubUrl && (
-                          <Button variant="outline" size="sm" asChild>
-                            <Link href={project.githubUrl} target="_blank">
-                              <Github className="w-4 h-4 mr-2" />
-                              Code
-                            </Link>
-                          </Button>
-                        )}
-                        {project.liveUrl && (
-                          <Button size="sm" asChild>
-                            <Link href={project.liveUrl} target="_blank">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Démo
-                            </Link>
-                          </Button>
-                        )}
-                      </div>
                     </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-
-            {/* Mobile Section */}
-            <section>
-              <div className="flex items-center gap-3 mb-8">
-                <Smartphone className="w-8 h-8 text-green-600" />
-                <h2 className="text-3xl font-bold text-gray-900">Projets Mobile</h2>
-                <Badge variant="secondary" className="ml-2">{mobileProjects.length} projets</Badge>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {mobileProjects.map((project) => (
-                  <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-                    <div className="relative overflow-hidden rounded-t-lg">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={400}
-                        height={300}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute top-4 right-4">
-                        <Badge className={getStatusColor(project.status)}>{getStatusText(project.status)}</Badge>
-                      </div>
-                    </div>
-
-                    <CardHeader>
-                      <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
-                        {project.title}
-                      </CardTitle>
-                      <CardDescription className="text-gray-600 line-clamp-3">{project.description}</CardDescription>
-                    </CardHeader>
-
-                    <CardContent className="space-y-4">
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <Badge key={tech} variant="outline" className="text-xs">{tech}</Badge>
-                        ))}
-                      </div>
-                      <div className="flex gap-2">
-                        {project.githubUrl && (
-                          <Button variant="outline" size="sm" asChild>
-                            <Link href={project.githubUrl} target="_blank">
-                              <Github className="w-4 h-4 mr-2" />
-                              Code
-                            </Link>
-                          </Button>
-                        )}
-                        {project.liveUrl && (
-                          <Button size="sm" asChild>
-                            <Link href={project.liveUrl} target="_blank">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Démo
-                            </Link>
-                          </Button>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-
-            {/* Footer */}
-            <div className="text-center mt-16 py-8 border-t border-gray-200">
-              <p className="text-gray-600">Développé avec ❤️ en utilisant React.js et Tailwind CSS</p>
+                  </div>
+                  {/* section bouton fixé en bas */}
+                  <div className="flex gap-2 justify-end px-6 pb-4 mt-auto">
+                    {project.githubUrl && (
+                      <Button variant="outline" size="sm">
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
+                    {project.liveUrl && (
+                      <Button size="sm">
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Démo
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                </Card>
+              ))}
             </div>
-          </div>
+          </section>
         </div>
+      </div>
+
     </div>
   )
 }
